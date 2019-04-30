@@ -16,8 +16,13 @@ public class Main {
         alcohol.add(new Alcohol("Whiskey", 0.4f));
 
         for (int i = 0; i < alcohol.size(); i++) {
-            alcohol.get(i).calculatePerMil(500, 80, true);
-            alcohol.get(i).calculatePerMil(500, 60, false);
+            System.out.println(alcohol.get(i).calculatePerMil(500, 80, true));
         }
+        System.out.println("\n");
+        for (int i = 0; i < alcohol.size(); i++) {
+            System.out.println(alcohol.get(i).calculatePerMil(500, 60, false));
+        }
+
+
     }
 }

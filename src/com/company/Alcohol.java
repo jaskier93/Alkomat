@@ -30,7 +30,7 @@ public class Alcohol {
         this.alkoPower = alkoPower;
     }
 
-    float calculatePerMil(int quantity, int weight, boolean male) {
+    String calculatePerMil(int quantity, int weight, boolean male) {
 
         //promile=ilosc wypitego alko/(wsp. 0,7 facet, 0.6 kobieta *masa)
         DecimalFormat df = new DecimalFormat("#.##");
@@ -49,10 +49,10 @@ public class Alcohol {
 
         float power = (float) (quantity * alkoPower * THE_DENSITY_RATIO_OF_ETHYL_ALCOHOL) / (weight * genderRate);
 
-        System.out.println("" + gender + " (" + weight + " kg) will have " + (df.format(power + 0.01f)
-                + "‰ blood-alcohol content after drinking " + quantity + " of " + getName()));
+      String description=("" + gender + " (" + weight + " kg) will have " + (df.format(power + 0.01f)
+                + "‰ blood-alcohol content after drinking " + quantity + " [ml] of " + getName()));
 
-        return power;
+        return description;
 
     }
 }
